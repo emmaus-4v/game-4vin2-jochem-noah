@@ -6,7 +6,7 @@ Gemaakt door:
 - Noah School
 
 ### Beschrijving
-hallo
+hallo ik ben hier
 
 
 ## Mijn planning
