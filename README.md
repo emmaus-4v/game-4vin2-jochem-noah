@@ -6,7 +6,8 @@ Gemaakt door:
 - Noah School
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+hallo
+
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
