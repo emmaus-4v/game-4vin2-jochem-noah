@@ -27,7 +27,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [ ] als speler en vijand botsen hp eraf
 - [ ] als hp = 0 -> dood
 - [ ] kogel kunnen schieten
-- [ ] als gogel uit beeld, kogel weg maken
+- [ ] als kogel uit beeld, kogel weg maken
 - [ ] als kogel tegenstander raakt punt erbij
 - [ ] 
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
