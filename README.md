@@ -30,6 +30,10 @@ Basis: uitleg, spelen, afgaan en punten
 - [ ] als kogel uit beeld, kogel weg maken
 - [ ] als kogel tegenstander raakt punt erbij
 - [ ] 
+
+
+### Uitbreidingen 1
+Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
 - [ ] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
 - [ ] x. teken een bal, kogel (als die in je spel zit)
@@ -39,12 +43,6 @@ Basis: uitleg, spelen, afgaan en punten
 - [ ] x. zorg dat je af kunt
 - [ ] x. maak game-over-scherm
 - [ ] x. maak uitlegscherm
-
-### Uitbreidingen 1
-Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
 
 ### Uitbreidingen 2
 Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
