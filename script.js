@@ -99,7 +99,12 @@ function setup() {
  */
 function draw() {
   if (spelStatus === SPELEN) {
-    beweegAlles();
+    beweegAlles(
+      if(keyIsDown(68)){
+        spelerX = spelerX + 1;
+        
+      };
+    );
     verwerkBotsing();
     tekenAlles();
     if (checkGameOver()) {
