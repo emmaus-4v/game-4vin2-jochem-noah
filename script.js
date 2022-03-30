@@ -86,10 +86,10 @@ var checkGameOver = function () {
  */
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1280, 720);
+  createCanvas(1980, 1420);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('black');
 }
 
 /**
@@ -100,7 +100,19 @@ function setup() {
 function draw() {
   if (spelStatus === SPELEN) {
       if(keyIsDown(68)){
-        spelerX = spelerX + 1;
+        spelerX = spelerX + 5;
+        
+      };
+      if(keyIsDown(65)){
+        spelerX = spelerX - 5;
+        
+      };
+      if(keyIsDown(87)){
+        spelerY = spelerY - 5;
+        
+      };
+      if(keyIsDown(83)){
+        spelerY = spelerY + 5;
         
       };
     verwerkBotsing();

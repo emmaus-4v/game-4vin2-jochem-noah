@@ -22,7 +22,7 @@ Basis: uitleg, spelen, afgaan en punten
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
-- [ ] een vijand tekenen
+- [ ] een vijand (giant enemy spider) tekenen
 - [ ] een vijadn laten bewegen
 - [ ] als speler en vijand botsen hp eraf
 - [ ] als hp = 0 -> dood
