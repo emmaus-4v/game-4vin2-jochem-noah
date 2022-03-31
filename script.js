@@ -26,7 +26,7 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function () {
   // speler
-
+ 
   // vijand
 
   // kogel
@@ -97,7 +97,7 @@ function setup() {
  * de code in deze functie wordt 50 keer per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
-function draw() {
+ function draw() {
   if (spelStatus === SPELEN) {
       if(keyIsDown(68)){
         spelerX = spelerX + 5;

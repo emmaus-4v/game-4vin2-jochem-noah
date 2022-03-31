@@ -16,14 +16,14 @@ Geef aan met [x] welke onderdelen af zijn
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] 1. maak index.html, style.css en script.js met canvas
-- [ ] 2. teken speler
+- [x] 2. teken speler
         - Zet je code in de functie tekenAlles()
 - [ ] 3. beweeg speler
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [ ] een vijand (giant enemy spider) tekenen
-- [ ] een vijadn laten bewegen
+- [ ] een vijand laten bewegen
 - [ ] als speler en vijand botsen hp eraf
 - [ ] als hp = 0 -> dood
 - [ ] kogel kunnen schieten
