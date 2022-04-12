@@ -97,23 +97,28 @@ function setup() {
  * de code in deze functie wordt 50 keer per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
+
+function deleteTrack() {
+        fill(200, 0, 0)
+        rect(0, 0, 1680, 1005);
+}
  function draw() {
   if (spelStatus === SPELEN) {
       if(keyIsDown(68)){
         spelerX = spelerX + 5;
-        
+        deleteTrack();
       };
       if(keyIsDown(65)){
         spelerX = spelerX - 5;
-        
+        deleteTrack();
       };
       if(keyIsDown(87)){
         spelerY = spelerY - 5;
-        
+        deleteTrack();
       };
       if(keyIsDown(83)){
         spelerY = spelerY + 5;
-        
+        deleteTrack();
       };
     verwerkBotsing();
     tekenAlles();
