@@ -72,7 +72,12 @@ if(spelerX > vijandX ){
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+  if (spelerX - vijandX < 50 &&
+    spelerX - vijandX > -50 &&
+    spelerY - vijandY < 50 &&
+    spelerY - vijandY > -50) {
+      console.log("Botsing");
+    };
   // botsing kogel tegen vijand
 
   // update punten en health
