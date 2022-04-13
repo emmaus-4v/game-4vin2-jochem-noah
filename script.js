@@ -27,6 +27,22 @@ var enemyY = 0;
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
+  if(keyIsDown(68)){
+    spelerX = spelerX + 5;
+    deleteTrack();
+  };
+  if(keyIsDown(65)){
+    spelerX = spelerX - 5;
+    deleteTrack();
+  };
+  if(keyIsDown(87)){
+    spelerY = spelerY - 5;
+    deleteTrack();
+  };
+  if(keyIsDown(83)){
+    spelerY = spelerY + 5;
+    deleteTrack();
+  };
   // speler
  
   // vijand
@@ -109,22 +125,7 @@ function deleteTrack() {
 }
  function draw() {
   if (spelStatus === SPELEN) {
-      if(keyIsDown(68)){
-        spelerX = spelerX + 5;
-        deleteTrack();
-      };
-      if(keyIsDown(65)){
-        spelerX = spelerX - 5;
-        deleteTrack();
-      };
-      if(keyIsDown(87)){
-        spelerY = spelerY - 5;
-        deleteTrack();
-      };
-      if(keyIsDown(83)){
-        spelerY = spelerY + 5;
-        deleteTrack();
-      };
+    beweegAlles();
     verwerkBotsing();
     tekenAlles();
     if (checkGameOver()) {
