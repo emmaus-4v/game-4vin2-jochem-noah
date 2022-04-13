@@ -27,6 +27,7 @@ var vijandY = 0;
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
+   // speler
   if(keyIsDown(68) && spelerX < 1655){
     spelerX = spelerX + 5;
     deleteTrack();
@@ -43,10 +44,24 @@ var beweegAlles = function () {
     spelerY = spelerY + 5;
     deleteTrack();
   };
-  // speler
- 
-  // vijand
 
+  // vijand
+if(spelerY < vijandY ){
+  vijandY = vijandY - 1;
+  deleteTrack();
+};
+if(spelerY > vijandY ){
+  vijandY++
+  deleteTrack();
+};
+if(spelerX < vijandX ){
+  vijandX = vijandX - 1;
+  deleteTrack();
+};
+if(spelerX > vijandX ){
+  vijandX++
+  deleteTrack();
+};
   // kogel
 };
 
@@ -72,9 +87,9 @@ var tekenAlles = function () {
 
   // vijand
   fill("yellow");
-  rect(vijandX, vijandY , 50, 50);
+  rect(vijandX - 25, vijandY - 25, 50, 50);
   fill("red");
-  ellipse(vijandX + 25, vijandY + 25, 10, 10);
+  ellipse(vijandX, vijandY, 10, 10);
   // kogel
 
   // speler
