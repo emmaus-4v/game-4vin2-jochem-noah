@@ -47,19 +47,19 @@ var beweegAlles = function () {
 
   // vijand
 if(spelerY < vijandY ){
-  vijandY = vijandY - 1;
+  vijandY -= 2
   deleteTrack();
 };
 if(spelerY > vijandY ){
-  vijandY++
+  vijandY += 2
   deleteTrack();
 };
 if(spelerX < vijandX ){
-  vijandX = vijandX - 1;
+  vijandX -= 2
   deleteTrack();
 };
 if(spelerX > vijandX ){
-  vijandX++
+  vijandX += 2
   deleteTrack();
 };
   // kogel
