@@ -24,7 +24,7 @@ Basis: uitleg, spelen, afgaan en punten
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [x] een vijand (giant enemy spider) tekenen
 - [x] een vijand laten bewegen
-- [ ] als speler en vijand botsen hp eraf
+- [x] als speler en vijand botsen hp eraf
 - [ ] als hp = 0 -> dood
 - [ ] kogel kunnen schieten
 - [ ] als kogel uit beeld, kogel weg maken
