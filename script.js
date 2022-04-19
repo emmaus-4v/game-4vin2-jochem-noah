@@ -20,6 +20,7 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 0;
 var vijandY = 0;
 
+var healthPoints = 1;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -72,7 +73,7 @@ if(spelerX > vijandX ){
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
-  var healthPoints = 1;
+  
   // botsing speler tegen vijand
   if (spelerX - vijandX < 50 &&
     spelerX - vijandX > -50 &&
