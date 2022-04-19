@@ -20,7 +20,10 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 0;
 var vijandY = 0;
 
-var healthPoints = 1;
+var healthPoints = 3;
+var hpX = 25;
+
+var botsingMoment = 0;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -80,14 +83,14 @@ var verwerkBotsing = function () {
     spelerY - vijandY < 50 &&
     spelerY - vijandY > -50) {
       console.log("Botsing");
-      healthPoints = 0;
+        healthPoints -= 1;
     };
   // botsing kogel tegen vijand
 
   // update punten en health
     if (healthPoints > 0){
       fill(0,200,0);
-      rect(25, 800, 55, 70);
+      rect(hpX, 800, 55, 70);
     };
 };
 
@@ -157,7 +160,7 @@ function deleteTrack() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver()) {
+    if (checkGameOver(healthPoints <= 0)) {
       spelStatus = GAMEOVER;
     }
   }
