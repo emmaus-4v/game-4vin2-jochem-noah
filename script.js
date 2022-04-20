@@ -161,12 +161,13 @@ function deleteTrack() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver(hp <= 0)) {
+    if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-    
+    fill(0, 0, 0)
+    rect(0, 0, 1680, 1005)
   }
 }
