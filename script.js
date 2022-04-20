@@ -175,5 +175,9 @@ function draw() {
     // teken game-over scherm
     fill(0, 0, 0)
     rect(0, 0, 1680, 1005)
+    fill(255, 0, 0)
+    //rect(840, 0, 2, 1005) (midden van het scherm)
+    textSize(80)
+    text("game over", 640, 502)
   }
 }
