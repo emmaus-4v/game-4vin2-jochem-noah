@@ -21,7 +21,7 @@ var vijandX = 0;
 var vijandY = 0;
 
 var healthPoints = 3;
-var hpX = 25;
+var hpWidth = 400;
 
 var botsingMoment = 0;
 /* ********************************************* */
@@ -90,7 +90,7 @@ var verwerkBotsing = function () {
   // update punten en health
     if (healthPoints > 0){
       fill(0,200,0);
-      rect(hpX, 800, 55, 70);
+      rect(25, 950, hpWidth, 30);
     };
 };
 
