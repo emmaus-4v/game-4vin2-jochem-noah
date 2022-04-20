@@ -20,7 +20,6 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 0;
 var vijandY = 0;
 
-var healthPoints = 3;
 var hp = 400;
 
 var botsingMoment = 0;
