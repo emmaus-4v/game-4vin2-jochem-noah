@@ -21,7 +21,7 @@ var vijandX = 0;
 var vijandY = 0;
 
 var healthPoints = 3;
-var hpWidth = 400;
+var hp = 400;
 
 var botsingMoment = 0;
 /* ********************************************* */
@@ -83,14 +83,14 @@ var verwerkBotsing = function () {
     spelerY - vijandY < 50 &&
     spelerY - vijandY > -50) {
       console.log("Botsing");
-        healthPoints -= 1;
+        hp -= 1;
     };
   // botsing kogel tegen vijand
 
   // update punten en health
-    if (healthPoints > 0){
+    if (hp > 0){
       fill(0,200,0);
-      rect(25, 950, hpWidth, 30);
+      rect(25, 950, hp, 30);
     };
 };
 
