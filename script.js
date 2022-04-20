@@ -82,7 +82,8 @@ var verwerkBotsing = function () {
     spelerY - vijandY < 50 &&
     spelerY - vijandY > -50) {
       console.log("Botsing");
-        hp -= 3;
+        hp -= 10;
+        deleteTrack();
     };
   // botsing kogel tegen vijand
 
@@ -166,6 +167,6 @@ function deleteTrack() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
+    
   }
 }
