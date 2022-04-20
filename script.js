@@ -82,7 +82,7 @@ var verwerkBotsing = function () {
     spelerY - vijandY < 50 &&
     spelerY - vijandY > -50) {
       console.log("Botsing");
-        hp -= 1;
+        hp -= 3;
     };
   // botsing kogel tegen vijand
 
@@ -90,6 +90,7 @@ var verwerkBotsing = function () {
     if (hp > 0){
       fill(0,200,0);
       rect(25, 950, hp, 30);
+      
     };
 };
 
@@ -159,7 +160,7 @@ function deleteTrack() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver(healthPoints <= 0)) {
+    if (checkGameOver(hp <= 0)) {
       spelStatus = GAMEOVER;
     }
   }
