@@ -31,41 +31,41 @@ var botsingMoment = 0;
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
-   // speler
-  if(keyIsDown(68) && spelerX < 1655){
+  // speler
+  if (keyIsDown(68) && spelerX < 1655) {
     spelerX = spelerX + 5;
     deleteTrack();
   };
-  if(keyIsDown(65) && spelerX > 25){
+  if (keyIsDown(65) && spelerX > 25) {
     spelerX = spelerX - 5;
     deleteTrack();
   };
-  if(keyIsDown(87) && spelerY > 25){
+  if (keyIsDown(87) && spelerY > 25) {
     spelerY = spelerY - 5;
     deleteTrack();
   };
-  if(keyIsDown(83) && spelerY < 980){
+  if (keyIsDown(83) && spelerY < 980) {
     spelerY = spelerY + 5;
     deleteTrack();
   };
 
   // vijand
-if(spelerY < vijandY ){
-  vijandY -= 2
-  deleteTrack();
-};
-if(spelerY > vijandY ){
-  vijandY += 2
-  deleteTrack();
-};
-if(spelerX < vijandX ){
-  vijandX -= 2
-  deleteTrack();
-};
-if(spelerX > vijandX ){
-  vijandX += 2
-  deleteTrack();
-};
+  if (spelerY < vijandY) {
+    vijandY -= 2
+    deleteTrack();
+  };
+  if (spelerY > vijandY) {
+    vijandY += 2
+    deleteTrack();
+  };
+  if (spelerX < vijandX) {
+    vijandX -= 2
+    deleteTrack();
+  };
+  if (spelerX > vijandX) {
+    vijandX += 2
+    deleteTrack();
+  };
   // kogel
 };
 
@@ -75,24 +75,26 @@ if(spelerX > vijandX ){
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
-  
+
   // botsing speler tegen vijand
   if (spelerX - vijandX < 50 &&
     spelerX - vijandX > -50 &&
     spelerY - vijandY < 50 &&
     spelerY - vijandY > -50) {
-      console.log("Botsing");
-        hp -= 10;
-        deleteTrack();
-    };
+    console.log("Botsing");
+    if (hp > 0) {
+      hp -= 3;
+      deleteTrack();
+    }
+  };
   // botsing kogel tegen vijand
 
   // update punten en health
-    if (hp > 0){
-      fill(0,200,0);
-      rect(25, 950, hp, 30);
-      
-    };
+  if (hp > 0) {
+    fill(0, 200, 0);
+    rect(25, 950, hp, 30);
+
+  };
 };
 
 /**
@@ -115,8 +117,8 @@ var tekenAlles = function () {
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
-  
-  
+
+
 
 };
 
@@ -126,7 +128,11 @@ var tekenAlles = function () {
  */
 var checkGameOver = function () {
   // check of HP 0 is , of tijd op is, of ...
-  return false;
+  if (hp < 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ********************************************* */
@@ -153,10 +159,10 @@ function setup() {
  */
 
 function deleteTrack() {
-        fill(200, 0, 0)
-        rect(0, 0, 1680, 1005);
+  fill(200, 0, 0)
+  rect(0, 0, 1680, 1005);
 }
- function draw() {
+function draw() {
   if (spelStatus === SPELEN) {
     beweegAlles();
     verwerkBotsing();
