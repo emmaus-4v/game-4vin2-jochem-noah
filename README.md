@@ -25,7 +25,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] een vijand (giant enemy spider) tekenen
 - [x] een vijand laten bewegen
 - [x] als speler en vijand botsen hp eraf
-- [ ] als hp = 0 -> dood
+- [x] als hp = 0 -> dood
 - [ ] kogel kunnen schieten
 - [ ] als kogel uit beeld, kogel weg maken
 - [ ] als kogel tegenstander raakt punt erbij

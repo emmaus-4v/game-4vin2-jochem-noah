@@ -178,6 +178,6 @@ function draw() {
     fill(255, 0, 0)
     //rect(840, 0, 2, 1005) (midden van het scherm)
     textSize(80)
-    text("game over", 640, 502)
+    text("YOU DIED :(", 640, 502)
   }
 }
