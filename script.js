@@ -23,6 +23,9 @@ var vijandY = 0;
 var hp = 400;
 
 var botsingMoment = 0;
+
+var kogelX = spelerX;
+var kogelY = spelerY;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -67,6 +70,7 @@ var beweegAlles = function () {
     deleteTrack();
   };
   // kogel
+  ellipse(kogelX, kogelY, 7, 7);
 };
 
 /**
