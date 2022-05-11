@@ -27,6 +27,9 @@ var botsingMoment = 0;
 
 var kogelX = spelerX;
 var kogelY = spelerY;
+
+var spelerImg;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -146,11 +149,12 @@ var tekenAlles = function () {
       kogelX = spelerX 
       kogelY = spelerY 
     }
-  // speler speler width = 200 speler height = 80
-  fill("green");
+  // speler
+ /* fill("green");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("lime");
-  ellipse(spelerX, spelerY, 10, 10);
+  ellipse(spelerX, spelerY, 10, 10);*/ //preciese hitbox van speler
+  image(spelerImg, spelerX-100, spelerY-40, 200, 75);
 
   // punten en health
 
@@ -180,6 +184,10 @@ var checkGameOver = function () {
  * de code in deze functie wordt één keer uitgevoerd door
  * de p5 library, zodra het spel geladen is in de browser
  */
+ function preload() {
+  spelerImg = loadImage('Afbeeldingen/pixel-doom-guy.png');
+}
+
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1680, 1005);
