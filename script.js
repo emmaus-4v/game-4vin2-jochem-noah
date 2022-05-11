@@ -36,19 +36,19 @@ var kogelY = spelerY;
 var beweegAlles = function () {
   // speler
   if (keyIsDown(68) && spelerX < 1655) {
-    spelerX = spelerX + 5;
+    spelerX = spelerX + 8;
     deleteTrack();
   };
   if (keyIsDown(65) && spelerX > 25) {
-    spelerX = spelerX - 5;
+    spelerX = spelerX - 8;
     deleteTrack();
   };
   if (keyIsDown(87) && spelerY > 25) {
-    spelerY = spelerY - 5;
+    spelerY = spelerY - 8;
     deleteTrack();
   };
   if (keyIsDown(83) && spelerY < 980) {
-    spelerY = spelerY + 5;
+    spelerY = spelerY + 8;
     deleteTrack();
   };
 
