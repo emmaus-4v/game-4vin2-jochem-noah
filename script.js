@@ -54,19 +54,19 @@ var beweegAlles = function () {
 
   // vijand
   if (spelerY < vijandY) {
-    vijandY -= 2
+    vijandY -= (vijandY - spelerY) / 70
     deleteTrack();
   };
   if (spelerY > vijandY) {
-    vijandY += 2
+    vijandY += (spelerY - vijandY) / 70
     deleteTrack();
   };
   if (spelerX < vijandX) {
-    vijandX -= 2
+    vijandX -= (vijandX - spelerX) / 70
     deleteTrack();
   };
   if (spelerX > vijandX) {
-    vijandX += 2
+    vijandX +=  (spelerX - vijandX) / 70
     deleteTrack();
   };
   // kogel
@@ -97,7 +97,9 @@ var verwerkBotsing = function () {
   if (hp > 0) {
     fill(0, 200, 0);
     rect(25, 950, hp, 30);
-
+    fill(0,0,0);
+    textSize(20);
+    text(hp, 28, 973);
   };
 };
 
@@ -115,7 +117,7 @@ var tekenAlles = function () {
   // kogel
   if(mouseIsPressed) {
     fill(230, 153, 0)
-    ellipse(kogelX, kogelY, 7, 7);
+    ellipse(spelerX, spelerY, 7, 7);
     }
   // speler
   fill("green");
