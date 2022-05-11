@@ -16,6 +16,7 @@ var spelStatus = SPELEN;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
+var spelerSnelheid = 6;
 
 var vijandX = 0;
 var vijandY = 0;
@@ -35,22 +36,26 @@ var kogelY = spelerY;
  */
 var beweegAlles = function () {
   // speler
+  if (keyIsDown(16) && spelerSnelheid < 7){
+    spelerSnelheid = spelerSnelheid * 2 
+  }
   if (keyIsDown(68) && spelerX < 1655) {
-    spelerX = spelerX + 8;
+    spelerX = spelerX + spelerSnelheid;
     deleteTrack();
   };
   if (keyIsDown(65) && spelerX > 25) {
-    spelerX = spelerX - 8;
+    spelerX = spelerX - spelerSnelheid;
     deleteTrack();
   };
   if (keyIsDown(87) && spelerY > 25) {
-    spelerY = spelerY - 8;
+    spelerY = spelerY - spelerSnelheid;
     deleteTrack();
   };
   if (keyIsDown(83) && spelerY < 980) {
-    spelerY = spelerY + 8;
+    spelerY = spelerY + spelerSnelheid;
     deleteTrack();
   };
+  
 
   // vijand
   if (spelerY < vijandY) {
