@@ -70,7 +70,7 @@ var beweegAlles = function () {
     deleteTrack();
   };
   // kogel
-  ellipse(kogelX, kogelY, 7, 7);
+ 
 };
 
 /**
@@ -113,7 +113,10 @@ var tekenAlles = function () {
   fill("red");
   ellipse(vijandX, vijandY, 10, 10);
   // kogel
-
+  if(mouseIsPressed) {
+    fill(230, 153, 0)
+    ellipse(kogelX, kogelY, 7, 7);
+    }
   // speler
   fill("green");
   rect(spelerX - 25, spelerY - 25, 50, 50);
