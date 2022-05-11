@@ -119,7 +119,7 @@ var tekenAlles = function () {
     fill(230, 153, 0)
     ellipse(spelerX, spelerY, 7, 7);
     }
-  // speler
+  // speler speler width = 200 speler height = 80
   fill("green");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("lime");
