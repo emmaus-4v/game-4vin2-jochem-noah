@@ -36,8 +36,10 @@ var kogelY = spelerY;
  */
 var beweegAlles = function () {
   // speler
-  if (keyIsDown(16) && spelerSnelheid < 7){
-    spelerSnelheid = spelerSnelheid * 2 
+  if (keyIsDown(16) && spelerSnelheid){
+    spelerSnelheid = 9 
+  }else{
+    spelerSnelheid = 6
   }
   if (keyIsDown(68) && spelerX < 1655) {
     spelerX = spelerX + spelerSnelheid;
@@ -55,7 +57,23 @@ var beweegAlles = function () {
     spelerY = spelerY + spelerSnelheid;
     deleteTrack();
   };
-  
+  /* schuin lopen snelheid correctie */
+  if (keyIsDown(68) && keyIsDown(87)){
+    spelerX -=2,5
+    spelerY +=2,5
+  }
+  if (keyIsDown(68) && keyIsDown(83)){
+    spelerX -=2,5
+    spelerY -=2,5
+  }
+  if (keyIsDown(65) && keyIsDown(87)){
+    spelerX +=2,5
+    spelerY +=2,5
+  }
+  if (keyIsDown(65) && keyIsDown(83)){
+    spelerX +=2,5
+    spelerY -=2,5
+  }
 
   // vijand
   if (spelerY < vijandY) {
@@ -121,8 +139,12 @@ var tekenAlles = function () {
   ellipse(vijandX, vijandY, 10, 10);
   // kogel
   if(mouseIsPressed) {
+    beweegKogel();
     fill(230, 153, 0)
-    ellipse(spelerX, spelerY, 7, 7);
+    ellipse(kogelX, kogelY, 7, 7);
+    }else{
+      kogelX = spelerX 
+      kogelY = spelerY 
     }
   // speler speler width = 200 speler height = 80
   fill("green");
@@ -171,6 +193,10 @@ function setup() {
  * de code in deze functie wordt 50 keer per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
+function beweegKogel(){
+kogelX += (mouseX - spelerX)/ 50
+kogelY += (mouseY - spelerY)/ 50
+}
 
 function deleteTrack() {
   fill(200, 0, 0)
