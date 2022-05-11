@@ -26,7 +26,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] een vijand laten bewegen
 - [x] als speler en vijand botsen hp eraf
 - [x] als hp = 0 -> dood
-- [ ] kogel kunnen schieten
+- [x] kogel kunnen schieten
 - [ ] als kogel uit beeld, kogel weg maken
 - [ ] als kogel tegenstander raakt punt erbij
 - [ ] 
