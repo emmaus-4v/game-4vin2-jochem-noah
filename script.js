@@ -144,7 +144,7 @@ var tekenAlles = function () {
   if(mouseIsPressed) {
     beweegKogel();
     fill(230, 153, 0)
-    ellipse(kogelX, kogelY, 7, 7);
+    ellipse(kogelX, kogelY, 12, 12);
     }else{
       kogelX = spelerX 
       kogelY = spelerY 
