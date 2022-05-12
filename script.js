@@ -29,7 +29,8 @@ var kogelX = spelerX;
 var kogelY = spelerY;
 
 var spelerImg;
-
+var spelerImgRev;
+var spelerStatus = 1;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -50,6 +51,7 @@ var beweegAlles = function () {
   };
   if (keyIsDown(65) && spelerX > 25) {
     spelerX = spelerX - spelerSnelheid;
+    spelerStatus = 2;
     deleteTrack();
   };
   if (keyIsDown(87) && spelerY > 25) {
@@ -95,6 +97,12 @@ var beweegAlles = function () {
     vijandX +=  (spelerX - vijandX) / 70
     deleteTrack();
   };
+  if (keyIsDown(68)){
+    spelerStatus = 1;
+  }
+  if (keyIsDown(65)){
+    spelerStatus = 2;
+  }
   // kogel
  
 };
@@ -109,8 +117,8 @@ var verwerkBotsing = function () {
   // botsing speler tegen vijand
   if (spelerX - vijandX < 50 &&
     spelerX - vijandX > -50 &&
-    spelerY - vijandY < 50 &&
-    spelerY - vijandY > -50) {
+    spelerY - vijandY < 60 &&
+    spelerY - vijandY > -60) {
     console.log("Botsing");
     if (hp > 0) {
       hp -= 3;
@@ -150,11 +158,17 @@ var tekenAlles = function () {
       kogelY = spelerY 
     }
   // speler
- /* fill("green");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
+  fill("green");
+  /*rect(spelerX - 25, spelerY - 30, 50, 60);
   fill("lime");
   ellipse(spelerX, spelerY, 10, 10);*/ //preciese hitbox van speler
-  image(spelerImg, spelerX-100, spelerY-40, 200, 75);
+  if(spelerStatus < 2){
+    image(spelerImg, spelerX-100, spelerY-40, 200, 80);
+  }
+  if (spelerStatus > 1){
+    image(spelerImgRev, spelerX-100, spelerY-40, 200, 80);
+  }
+  
 
   // punten en health
 
@@ -186,6 +200,7 @@ var checkGameOver = function () {
  */
  function preload() {
   spelerImg = loadImage('Afbeeldingen/pixel-doom-guy.png');
+  spelerImgRev = loadImage('Afbeeldingen/pixel-doom-guy-reversed.png');
 }
 
 function setup() {
