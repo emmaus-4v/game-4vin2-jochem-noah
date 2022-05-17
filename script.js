@@ -31,6 +31,8 @@ var kogelY = spelerY;
 var spelerImg;
 var spelerImgRev;
 var spelerStatus = 1;
+
+var vijandNormaalImg;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -148,6 +150,12 @@ var tekenAlles = function () {
   rect(vijandX - 25, vijandY - 25, 50, 50);
   fill("red");
   ellipse(vijandX, vijandY, 10, 10);
+  if(spelerStatus < 2){
+    image(vijandNormaalImg, vijandX-25, vijandY-25, 50, 50);
+  }
+  if (spelerStatus > 1){
+    image(spelerImgRev, spelerX-100, spelerY-40, 200, 80);
+  }
   // kogel
   if(mouseIsPressed) {
     beweegKogel();
@@ -201,6 +209,7 @@ var checkGameOver = function () {
  function preload() {
   spelerImg = loadImage('Afbeeldingen/pixel-doom-guy.png');
   spelerImgRev = loadImage('Afbeeldingen/pixel-doom-guy-reversed.png');
+  vijandNormaalImg = loadImage('Afbeeldingen/imp_pixel.png');
 }
 
 function setup() {
