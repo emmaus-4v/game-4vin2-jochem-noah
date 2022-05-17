@@ -146,15 +146,15 @@ var tekenAlles = function () {
   // achtergrond
 
   // vijand
-  fill("yellow");
+  /*fill("yellow");
   rect(vijandX - 25, vijandY - 25, 50, 50);
   fill("red");
-  ellipse(vijandX, vijandY, 10, 10);
+  ellipse(vijandX, vijandY, 10, 10);*/
   if(spelerStatus < 2){
-    image(vijandNormaalImg, vijandX-25, vijandY-25, 50, 50);
+    image(vijandNormaalImg, vijandX-35, vijandY-45, 70, 90);
   }
   if (spelerStatus > 1){
-    image(spelerImgRev, spelerX-100, spelerY-40, 200, 80);
+    image(vijandNormaalImgRev, vijandX-35, vijandY-45, 70, 90);
   }
   // kogel
   if(mouseIsPressed) {
@@ -210,6 +210,8 @@ var checkGameOver = function () {
   spelerImg = loadImage('Afbeeldingen/pixel-doom-guy.png');
   spelerImgRev = loadImage('Afbeeldingen/pixel-doom-guy-reversed.png');
   vijandNormaalImg = loadImage('Afbeeldingen/imp_pixel.png');
+  vijandNormaalImgRev = loadImage('Afbeeldingen/imp_pixel_rev.png');
+  BackgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
 }
 
 function setup() {
@@ -218,6 +220,7 @@ function setup() {
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
   background(200, 0, 0);
+  image(BackgroundImg, spelerX-100, spelerY-40, 200, 80);
 }
 
 /**
