@@ -214,7 +214,7 @@ var checkGameOver = function () {
   spelerImgRev = loadImage('Afbeeldingen/pixel-doom-guy-reversed.png');
   vijandNormaalImg = loadImage('Afbeeldingen/imp_pixel.png');
   vijandNormaalImgRev = loadImage('Afbeeldingen/imp_pixel_rev.png');
-  BackgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
+  backgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
 }
 
 function setup() {
@@ -222,8 +222,7 @@ function setup() {
   createCanvas(1680, 1005);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background(200, 0, 0);
-  image(BackgroundImg, spelerX-100, spelerY-40, 200, 80);
+  image(backgroundImg, 0, 0, 1680, 1005);
 }
 
 /**
@@ -245,9 +244,9 @@ function resetSpel(){
 }
 
 function deleteTrack() {
-  fill(200, 0, 0)
-  rect(0, 0, 1680, 1005);
-}
+  image(backgroundImg, 0, 0, 1680, 1005);
+};
+
 function draw() {
   if (spelStatus === SPELEN) {
     beweegAlles();
