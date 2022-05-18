@@ -12,6 +12,7 @@
 
 const SPELEN = 1;
 const GAMEOVER = 2;
+const PREGAME = 3;
 var spelStatus = SPELEN;
 
 var spelerX = 600; // x-positie van speler
@@ -33,6 +34,8 @@ var spelerImgRev;
 var spelerStatus = 1;
 
 var vijandNormaalImg;
+var vijandNormaalImgRev;
+var vijandStatus = 1;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -233,6 +236,14 @@ kogelX += (mouseX - spelerX)/ 50
 kogelY += (mouseY - spelerY)/ 50
 }
 
+function resetSpel(){
+  spelerX = 600;
+  spelerY = 600;
+  hp = 400;
+  vijandX = 0;
+  vijandY = 0;
+}
+
 function deleteTrack() {
   fill(200, 0, 0)
   rect(0, 0, 1680, 1005);
@@ -254,5 +265,16 @@ function draw() {
     //rect(840, 0, 2, 1005) (midden van het scherm)
     textSize(80)
     text("YOU DIED :(", 640, 502)
+    if (keyIsDown(32)){
+      spelStatus = PREGAME;
+      deleteTrack();
+      resetSpel();
+      
+      
+    }
+  }
+  if (spelStatus === PREGAME){
+    spelStatus = SPELEN;
+    
   }
 }
