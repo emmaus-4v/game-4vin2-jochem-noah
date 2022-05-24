@@ -22,6 +22,9 @@ var spelerSnelheid = 6;
 var vijandX = 0;
 var vijandY = 0;
 
+var vijand2X = 1800;
+var vijand2Y = 0;
+
 var hp = 400;
 
 var botsingMoment = 0;
@@ -110,6 +113,25 @@ var beweegAlles = function () {
     deleteTrack();
     vijandStatus = 1;
   };
+
+  if (spelerY < vijand2Y) {
+    vijand2Y -= (vijand2Y - spelerY) / 70
+    deleteTrack();
+  };
+  if (spelerY > vijand2Y) {
+    vijand2Y += (spelerY - vijand2Y) / 70
+    deleteTrack();
+  };
+  if (spelerX < vijand2X) {
+    vijand2X -= (vijand2X - spelerX) / 70
+    deleteTrack();
+    vijandStatus = 2;
+  };
+  if (spelerX > vijand2X) {
+    vijand2X +=  (spelerX - vijand2X) / 70
+    deleteTrack();
+    vijandStatus = 1;
+  };
   
   // kogel
  
@@ -126,7 +148,11 @@ var verwerkBotsing = function () {
   if (spelerX - vijandX < 50 &&
     spelerX - vijandX > -50 &&
     spelerY - vijandY < 60 &&
-    spelerY - vijandY > -60) {
+    spelerY - vijandY > -60 || 
+    spelerX - vijand2X < 50 &&
+    spelerX - vijand2X > -50 &&
+    spelerY - vijand2Y < 60 &&
+    spelerY - vijand2Y > -60) {
     console.log("Botsing");
     if (hp > 0) {
       hp -= 3;
@@ -161,6 +187,13 @@ var tekenAlles = function () {
   }
   if (vijandStatus > 1){
     image(vijandNormaalImgRev, vijandX-35, vijandY-45, 70, 90);
+  }
+
+  if(vijandStatus < 2){
+    image(vijandNormaalImg, vijand2X-35, vijand2Y-45, 70, 90);
+  }
+  if (vijandStatus > 1){
+    image(vijandNormaalImgRev, vijand2X-35, vijand2Y-45, 70, 90);
   }
   // kogel
   if(mouseIsPressed) {
@@ -244,6 +277,9 @@ function resetSpel(){
   hp = 400;
   vijandX = 0;
   vijandY = 0;
+  vijand2X = 1800;
+  vijand2Y = 0;
+
 }
 
 function deleteTrack() {
