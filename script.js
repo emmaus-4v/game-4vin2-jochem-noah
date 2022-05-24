@@ -84,6 +84,12 @@ var beweegAlles = function () {
     spelerX +=2,5
     spelerY -=2,5
   }
+  if (keyIsDown(68)){
+    spelerStatus = 1;
+  }
+  if (keyIsDown(65)){
+    spelerStatus = 2;
+  }
 
   // vijand
   if (spelerY < vijandY) {
@@ -97,17 +103,14 @@ var beweegAlles = function () {
   if (spelerX < vijandX) {
     vijandX -= (vijandX - spelerX) / 70
     deleteTrack();
+    vijandStatus = 2;
   };
   if (spelerX > vijandX) {
     vijandX +=  (spelerX - vijandX) / 70
     deleteTrack();
+    vijandStatus = 1;
   };
-  if (keyIsDown(68)){
-    spelerStatus = 1;
-  }
-  if (keyIsDown(65)){
-    spelerStatus = 2;
-  }
+  
   // kogel
  
 };
@@ -153,10 +156,10 @@ var tekenAlles = function () {
   rect(vijandX - 25, vijandY - 25, 50, 50);
   fill("red");
   ellipse(vijandX, vijandY, 10, 10);*/
-  if(spelerStatus < 2){
+  if(vijandStatus < 2){
     image(vijandNormaalImg, vijandX-35, vijandY-45, 70, 90);
   }
-  if (spelerStatus > 1){
+  if (vijandStatus > 1){
     image(vijandNormaalImgRev, vijandX-35, vijandY-45, 70, 90);
   }
   // kogel
