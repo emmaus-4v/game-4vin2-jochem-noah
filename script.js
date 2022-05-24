@@ -39,6 +39,9 @@ var spelerStatus = 1;
 var vijandNormaalImg;
 var vijandNormaalImgRev;
 var vijandStatus = 1;
+var vijand2Status = 1;
+
+var gameTimer = 0;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -125,12 +128,12 @@ var beweegAlles = function () {
   if (spelerX < vijand2X) {
     vijand2X -= (vijand2X - spelerX) / 70
     deleteTrack();
-    vijandStatus = 2;
+    vijand2Status = 2;
   };
   if (spelerX > vijand2X) {
     vijand2X +=  (spelerX - vijand2X) / 70
     deleteTrack();
-    vijandStatus = 1;
+    vijand2Status = 1;
   };
   
   // kogel
@@ -189,10 +192,10 @@ var tekenAlles = function () {
     image(vijandNormaalImgRev, vijandX-35, vijandY-45, 70, 90);
   }
 
-  if(vijandStatus < 2){
+  if(vijand2Status < 2){
     image(vijandNormaalImg, vijand2X-35, vijand2Y-45, 70, 90);
   }
-  if (vijandStatus > 1){
+  if (vijand2Status > 1){
     image(vijandNormaalImgRev, vijand2X-35, vijand2Y-45, 70, 90);
   }
   // kogel
@@ -218,7 +221,11 @@ var tekenAlles = function () {
   
 
   // punten en health
-
+  if (gameTimer=> 0){
+  gameTimer++;
+  textSize(30)
+  text(gameTimer/73, 20, 30);
+  }
 
 
 };
@@ -313,6 +320,7 @@ function draw() {
   }
   if (spelStatus === PREGAME){
     spelStatus = SPELEN;
+    gameTimer = 0;
     
   }
 }
