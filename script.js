@@ -148,14 +148,14 @@ var beweegAlles = function () {
 var verwerkBotsing = function () {
 
   // botsing speler tegen vijand
-  if (spelerX - vijandX < 50 &&
-    spelerX - vijandX > -50 &&
-    spelerY - vijandY < 60 &&
-    spelerY - vijandY > -60 || 
-    spelerX - vijand2X < 50 &&
-    spelerX - vijand2X > -50 &&
-    spelerY - vijand2Y < 60 &&
-    spelerY - vijand2Y > -60) {
+  if (spelerX - vijandX < 60 &&
+    spelerX - vijandX > -60 &&
+    spelerY - vijandY < 75 &&
+    spelerY - vijandY > -75 || 
+    spelerX - vijand2X < 60 &&
+    spelerX - vijand2X > -60 &&
+    spelerY - vijand2Y < 75 &&
+    spelerY - vijand2Y > -75) {
     console.log("Botsing");
     if (hp > 0) {
       hp -= 3;
