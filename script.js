@@ -22,6 +22,8 @@ var spelerSnelheid = 6;
 var vijandX = 0;
 var vijandY = 0;
 
+var vijandSnelheid = 70;
+
 var vijand2X = 1800;
 var vijand2Y = 0;
 
@@ -99,39 +101,39 @@ var beweegAlles = function () {
 
   // vijand
   if (spelerY < vijandY) {
-    vijandY -= (vijandY - spelerY) / 70
+    vijandY -= (vijandY - spelerY) / vijandSnelheid
     deleteTrack();
   };
   if (spelerY > vijandY) {
-    vijandY += (spelerY - vijandY) / 70
+    vijandY += (spelerY - vijandY) / vijandSnelheid
     deleteTrack();
   };
   if (spelerX < vijandX) {
-    vijandX -= (vijandX - spelerX) / 70
+    vijandX -= (vijandX - spelerX) / vijandSnelheid
     deleteTrack();
     vijandStatus = 2;
   };
   if (spelerX > vijandX) {
-    vijandX +=  (spelerX - vijandX) / 70
+    vijandX +=  (spelerX - vijandX) / vijandSnelheid
     deleteTrack();
     vijandStatus = 1;
   };
 
   if (spelerY < vijand2Y) {
-    vijand2Y -= (vijand2Y - spelerY) / 70
+    vijand2Y -= (vijand2Y - spelerY) / vijandSnelheid
     deleteTrack();
   };
   if (spelerY > vijand2Y) {
-    vijand2Y += (spelerY - vijand2Y) / 70
+    vijand2Y += (spelerY - vijand2Y) / vijandSnelheid
     deleteTrack();
   };
   if (spelerX < vijand2X) {
-    vijand2X -= (vijand2X - spelerX) / 70
+    vijand2X -= (vijand2X - spelerX) / vijandSnelheid
     deleteTrack();
     vijand2Status = 2;
   };
   if (spelerX > vijand2X) {
-    vijand2X +=  (spelerX - vijand2X) / 70
+    vijand2X +=  (spelerX - vijand2X) / vijandSnelheid
     deleteTrack();
     vijand2Status = 1;
   };
@@ -221,13 +223,34 @@ var tekenAlles = function () {
   
 
   // punten en health
+
+  //timer voor de game
   if (gameTimer=> 0){
   gameTimer++;
   textSize(30)
   text(gameTimer/73, 20, 30);
   }
-
-
+  if (gameTimer > 730){
+    vijandSnelheid = 65
+  }
+  if (gameTimer > 1460){
+    vijandSnelheid = 60
+  }
+  if (gameTimer > 2190){
+    vijandSnelheid = 55
+  }
+  if (gameTimer > 2920){
+    vijandSnelheid = 50
+  }
+  if (gameTimer > 3650){
+    vijandSnelheid = 40
+  }
+  if (gameTimer > 4380){
+    vijandSnelheid = 30
+  }
+  if (gameTimer > 5110){
+    vijandSnelheid = 15
+  }
 };
 
 /**
@@ -257,8 +280,6 @@ var checkGameOver = function () {
   spelerImgRev = loadImage('Afbeeldingen/pixel-doom-guy-reversed.png');
   vijandNormaalImg = loadImage('Afbeeldingen/imp_pixel.png');
   vijandNormaalImgRev = loadImage('Afbeeldingen/imp_pixel_rev.png');
-  vijandSchietImg = loadImage('Afbeeldingen/shooting-demon.png');
-  vijandSchietImgRev = loadImage('Afbeeldingen/shooting-demonRev.png');
   backgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
 }
 
@@ -320,9 +341,10 @@ function draw() {
       
     }
   }
+  
   if (spelStatus === PREGAME){
     spelStatus = SPELEN;
-    gameTimer = 0;
-    
+    gameTimer = 0; 
   }
 }
+
