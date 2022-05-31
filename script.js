@@ -257,6 +257,8 @@ var checkGameOver = function () {
   spelerImgRev = loadImage('Afbeeldingen/pixel-doom-guy-reversed.png');
   vijandNormaalImg = loadImage('Afbeeldingen/imp_pixel.png');
   vijandNormaalImgRev = loadImage('Afbeeldingen/imp_pixel_rev.png');
+  vijandSchietImg = loadImage('Afbeeldingen/shooting-demon.png');
+  vijandSchietImgRev = loadImage('Afbeeldingen/shooting-demonRev.png');
   backgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
 }
 
