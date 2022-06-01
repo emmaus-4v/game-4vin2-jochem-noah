@@ -33,6 +33,7 @@ var botsingMoment = 0;
 
 var kogelX = spelerX;
 var kogelY = spelerY;
+var beweegKogel = false;
 
 var spelerImg;
 var spelerImgRev;
@@ -139,7 +140,16 @@ var beweegAlles = function () {
   };
   
   // kogel
- 
+  if(mouseIsPressed){
+    beweegKogel = true
+  }
+  if(beweegKogel === true) {
+   kogelX = 60;
+   kogelY = 60;
+    }else{
+      kogelX = spelerX 
+      kogelY = spelerY 
+    }
 };
 
 /**
@@ -201,14 +211,9 @@ var tekenAlles = function () {
     image(vijandNormaalImgRev, vijand2X-35, vijand2Y-45, 70, 90);
   }
   // kogel
-  if(mouseIsPressed) {
-    beweegKogel();
-    fill(230, 153, 0)
-    ellipse(kogelX, kogelY, 12, 12);
-    }else{
-      kogelX = spelerX 
-      kogelY = spelerY 
-    }
+  fill(230, 153, 0)
+  ellipse(kogelX, kogelY, 12, 12);
+  
   // speler
   fill("green");
   /*rect(spelerX - 25, spelerY - 30, 50, 60);
