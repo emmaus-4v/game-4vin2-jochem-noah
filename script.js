@@ -183,7 +183,20 @@ var verwerkBotsing = function () {
     }
   };
   // botsing kogel tegen vijand
-
+  if (kogelX - vijandX < 60 &&
+    kogelX - vijandX > -60 &&
+    kogelY - vijandY < 75 &&
+    kogelY - vijandY > -75 || 
+    kogelX - vijand2X < 60 &&
+    kogelX - vijand2X > -60 &&
+    kogelY - vijand2Y < 75 &&
+    kogelY - vijand2Y > -75) {
+    console.log("Botsing");
+    if (hp > 0) {
+      hp -= 3;
+      deleteTrack();
+    }
+    };
   // update punten en health
   if (hp > 0) {
     fill(0, 200, 0);
@@ -323,6 +336,7 @@ function resetSpel(){
   vijandY = 0;
   vijand2X = 1800;
   vijand2Y = 0;
+  beweegKogel = false;
 
 }
 
