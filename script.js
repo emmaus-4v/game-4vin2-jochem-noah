@@ -34,6 +34,8 @@ var botsingMoment = 0;
 var kogelX = spelerX;
 var kogelY = spelerY;
 var beweegKogel = false;
+var kogelSnelheidX = 0;
+var kogelSnelheidY = 0;
 
 var spelerImg;
 var spelerImgRev;
@@ -45,6 +47,7 @@ var vijandStatus = 1;
 var vijand2Status = 1;
 
 var gameTimer = 0;
+var mousePressedTimes = 0;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -142,10 +145,15 @@ var beweegAlles = function () {
   // kogel
   if(mouseIsPressed){
     beweegKogel = true
+    mousePressedTimes ++
+  }
+  if (mousePressedTimes === 1){
+    kogelSnelheidX = (mouseX - spelerX)/ 50
+    kogelSnelheidY = (mouseY - spelerY)/ 50
   }
   if(beweegKogel === true) {
-   kogelX = 60;
-   kogelY = 60;
+   kogelX += kogelSnelheidX;
+   kogelY += kogelSnelheidY;
     }else{
       kogelX = spelerX 
       kogelY = spelerY 
@@ -211,9 +219,10 @@ var tekenAlles = function () {
     image(vijandNormaalImgRev, vijand2X-35, vijand2Y-45, 70, 90);
   }
   // kogel
-  fill(230, 153, 0)
-  ellipse(kogelX, kogelY, 12, 12);
-  
+  if (beweegKogel === true){
+    fill(230, 153, 0)
+    ellipse(kogelX, kogelY, 12, 12);
+  }
   // speler
   fill("green");
   /*rect(spelerX - 25, spelerY - 30, 50, 60);
