@@ -183,14 +183,14 @@ var verwerkBotsing = function () {
     }
   };
   // botsing kogel tegen vijand
-  if (kogelX - vijandX < 60 &&
-    kogelX - vijandX > -60 &&
-    kogelY - vijandY < 75 &&
-    kogelY - vijandY > -75 || 
-    kogelX - vijand2X < 60 &&
-    kogelX - vijand2X > -60 &&
-    kogelY - vijand2Y < 75 &&
-    kogelY - vijand2Y > -75) {
+  if (kogelX - vijandX < 41 &&
+    kogelX - vijandX > -41 &&
+    kogelY - vijandY < 51 &&
+    kogelY - vijandY > -51 || 
+    kogelX - vijand2X < 41 &&
+    kogelX - vijand2X > -41 &&
+    kogelY - vijand2Y < 51 &&
+    kogelY - vijand2Y > -51) {
     console.log("Botsing");
     if (hp > 0) {
       hp -= 3;
