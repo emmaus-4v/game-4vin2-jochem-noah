@@ -188,7 +188,7 @@ var verwerkBotsing = function () {
     }
   };
   // botsing kogel tegen vijand
-  if (kogelX - vijandX < 41 &&
+  if (beweegKogel === true && kogelX - vijandX < 41 &&
     kogelX - vijandX > -41 &&
     kogelY - vijandY < 51 &&
     kogelY - vijandY > -51 ) {
@@ -197,7 +197,7 @@ var verwerkBotsing = function () {
     resetVijand1();
     };
 
-  if ( kogelX - vijand2X < 41 &&
+  if (beweegKogel === true && kogelX - vijand2X < 41 &&
     kogelX - vijand2X > -41 &&
     kogelY - vijand2Y < 51 &&
     kogelY - vijand2Y > -51){
