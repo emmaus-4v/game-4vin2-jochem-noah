@@ -14,6 +14,7 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 const PREGAME = 3;
 var spelStatus = SPELEN;
+var gameOverImg;
 
 //speler
 var spelerX = 600; // x-positie van speler
@@ -338,6 +339,7 @@ var checkGameOver = function () {
   vijandNormaalImg = loadImage('Afbeeldingen/imp_pixel.png');
   vijandNormaalImgRev = loadImage('Afbeeldingen/imp_pixel_rev.png');
   backgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
+  gameOverImg = loadImage('Afbeeldingen/you-died.png');
 }
 
 function setup() {
@@ -397,9 +399,10 @@ function draw() {
     rect(0, 0, 1680, 1005)
     fill(255, 0, 0)
     //rect(840, 0, 2, 1005) //(midden van het scherm)
-    textSize(80)
-    text("YOU DIED!", 635, 480)
-    text("Druk op spatie om opnieuw te proberen", 150, 600)
+    image(gameOverImg, 0, 50, 1680 );
+    //textSize(80)
+    //text("YOU DIED!", 635, 480)
+    //text("Druk op spatie om opnieuw te proberen", 150, 600)
     if (keyIsDown(32)){
       spelStatus = PREGAME;
       deleteTrack();
