@@ -395,14 +395,14 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-    fill(0, 0, 0)
-    rect(0, 0, 1680, 1005)
-    fill(255, 0, 0)
+    //fill(0, 0, 0)
+    //rect(0, 0, 1680, 1005)
     //rect(840, 0, 2, 1005) //(midden van het scherm)
     image(gameOverImg, 0, 50, 1680 );
-    //textSize(80)
+    textSize(80)
+    fill(110, 0, 0)
     //text("YOU DIED!", 635, 480)
-    //text("Druk op spatie om opnieuw te proberen", 150, 600)
+    text("Druk op spatie om opnieuw te proberen", 150, 650)
     if (keyIsDown(32)){
       spelStatus = PREGAME;
       deleteTrack();
