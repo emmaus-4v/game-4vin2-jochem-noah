@@ -257,7 +257,7 @@ var tekenAlles = function () {
   textSize(30)
   text(gameTimer/73, 20, 30);
   }
-  if (gameTimer > 730){
+if (gameTimer > 730){
     vijandSnelheid = 65
   }
   if (gameTimer > 1460){
@@ -337,7 +337,7 @@ function resetSpel(){
   vijand2X = 1800;
   vijand2Y = 0;
   beweegKogel = false;
-
+  vijandSnelheid = 70;
 }
 
 function deleteTrack() {
