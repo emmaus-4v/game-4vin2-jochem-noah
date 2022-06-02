@@ -25,13 +25,13 @@ var spelerImgRev;
 var spelerStatus = 1;
 
 //vijand
-var vijandX = 0;
-var vijandY = 0;
+var vijandX = Math.floor(Math.random() * 1680) + 1;
+var vijandY = Math.floor(Math.random() * 1005) + 1;
 
 var vijandSnelheid = 70;
 
-var vijand2X = 1800;
-var vijand2Y = 0;
+var vijand2X = Math.floor(Math.random() * 1680) + 1;
+var vijand2Y = Math.floor(Math.random() * 1005) + 1;
 
 var vijandNormaalImg;
 var vijandNormaalImgRev;
@@ -359,23 +359,21 @@ kogelY += (mouseY - spelerY)/ 50
 }
 
 function resetVijand1(){
-vijandX = 0;
-vijandY = 0;
+  vijandX = Math.floor(Math.random() * 1680) + 1;
+  vijandY = Math.floor(Math.random() * 1005) + 1;
 }
 
 function resetVijand2(){
-vijand2X = 1800;
-vijand2Y = 0;
+vijand2X = Math.floor(Math.random() * 1680) + 1;
+vijand2Y = Math.floor(Math.random() * 1005) + 1;
 }
 
 function resetSpel(){
   spelerX = 600;
   spelerY = 600;
   hp = 400;
-  vijandX = 0;
-  vijandY = 0;
-  vijand2X = 1800;
-  vijand2Y = 0;
+  resetVijand1();
+  resetVijand2();
   beweegKogel = false;
   vijandSnelheid = 70;
 }
