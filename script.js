@@ -9,16 +9,22 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-
+//spel basis
 const SPELEN = 1;
 const GAMEOVER = 2;
 const PREGAME = 3;
 var spelStatus = SPELEN;
 
+//speler
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 var spelerSnelheid = 6;
 
+var spelerImg;
+var spelerImgRev;
+var spelerStatus = 1;
+
+//vijand
 var vijandX = 0;
 var vijandY = 0;
 
@@ -27,27 +33,27 @@ var vijandSnelheid = 70;
 var vijand2X = 1800;
 var vijand2Y = 0;
 
-var hp = 400;
+var vijandNormaalImg;
+var vijandNormaalImgRev;
+var vijandStatus = 1;
+var vijand2Status = 1;
 
+//hp en punten
+var hp = 400;
+var stamina = 250;
+var gameTimer = 0;
+var mousePressedTimes = 0;
+
+//botsing
 var botsingMoment = 0;
 
+//kogel
 var kogelX = spelerX;
 var kogelY = spelerY;
 var beweegKogel = false;
 var kogelSnelheidX = 0;
 var kogelSnelheidY = 0;
 
-var spelerImg;
-var spelerImgRev;
-var spelerStatus = 1;
-
-var vijandNormaalImg;
-var vijandNormaalImgRev;
-var vijandStatus = 1;
-var vijand2Status = 1;
-
-var gameTimer = 0;
-var mousePressedTimes = 0;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -57,10 +63,16 @@ var mousePressedTimes = 0;
  */
 var beweegAlles = function () {
   // speler
-  if (keyIsDown(16) && spelerSnelheid){
+  
+
+  if (keyIsDown(16) && stamina > 0  ){
     spelerSnelheid = 9 
+    stamina-=2
   }else{
     spelerSnelheid = 6
+  }
+  if (stamina <250  && !keyIsDown(16)){
+    stamina++
   }
   if (keyIsDown(68) && spelerX < 1655) {
     spelerX = spelerX + spelerSnelheid;
@@ -207,13 +219,7 @@ var verwerkBotsing = function () {
     } 
 
   // update punten en health
-  if (hp > 0) {
-    fill(0, 200, 0);
-    rect(25, 950, hp, 30);
-    fill(0,0,0);
-    textSize(20);
-    text(hp, 28, 973);
-  };
+  
 };
 
 /**
@@ -259,6 +265,21 @@ var tekenAlles = function () {
   
 
   // punten en health
+  if (hp > 0) {
+    fill(0, 200, 0);
+    rect(25, 950, hp, 30);
+    fill(0,0,0);
+    textSize(20);
+    text(hp, 28, 973);
+  };
+
+  if (stamina > 0){
+    fill(0, 149, 179);
+    rect(25, 925, stamina, 20);
+    fill(0,0,0);
+    textSize(15);
+    text(stamina, 28, 940);
+  }
 
   //timer voor de game
   if (gameTimer=> 0){
