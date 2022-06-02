@@ -154,6 +154,7 @@ var beweegAlles = function () {
   if(beweegKogel === true) {
    kogelX += kogelSnelheidX;
    kogelY += kogelSnelheidY;
+   mousePressedTimes = 0;
     }else{
       kogelX = spelerX 
       kogelY = spelerY 
