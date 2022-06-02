@@ -143,7 +143,7 @@ var beweegAlles = function () {
   };
   
   // kogel
-  if(mouseIsPressed){
+  if(mouseIsPressed && mousePressedTimes < 2){
     beweegKogel = true
     mousePressedTimes ++
   }
@@ -154,10 +154,14 @@ var beweegAlles = function () {
   if(beweegKogel === true) {
    kogelX += kogelSnelheidX;
    kogelY += kogelSnelheidY;
-   mousePressedTimes = 0;
     }else{
+      mousePressedTimes = 0;
+      beweegKogel = false;
       kogelX = spelerX 
       kogelY = spelerY 
+    }
+    if (kogelX > 1680 || kogelX < 0 || kogelY > 1005 || kogelY < 0){
+      beweegKogel = false;
     }
 };
 
@@ -187,7 +191,7 @@ var verwerkBotsing = function () {
   if (kogelX - vijandX < 41 &&
     kogelX - vijandX > -41 &&
     kogelY - vijandY < 51 &&
-    kogelY - vijandY > -51) {
+    kogelY - vijandY > -51 ) {
     console.log("BotsingKogel");
     beweegKogel = false;
     resetVijand1();
@@ -197,6 +201,7 @@ var verwerkBotsing = function () {
     kogelX - vijand2X > -41 &&
     kogelY - vijand2Y < 51 &&
     kogelY - vijand2Y > -51){
+      console.log("BotsingKogel");
       beweegKogel = false;
       resetVijand2();
     } 
