@@ -396,9 +396,9 @@ function draw() {
     fill(0, 0, 0)
     rect(0, 0, 1680, 1005)
     fill(255, 0, 0)
-    //rect(840, 0, 2, 1005) (midden van het scherm)
+    //rect(840, 0, 2, 1005) //(midden van het scherm)
     textSize(80)
-    text("YOU DIED :(", 640, 480)
+    text("YOU DIED!", 635, 480)
     text("Druk op spatie om opnieuw te proberen", 150, 600)
     if (keyIsDown(32)){
       spelStatus = PREGAME;
