@@ -186,17 +186,20 @@ var verwerkBotsing = function () {
   if (kogelX - vijandX < 41 &&
     kogelX - vijandX > -41 &&
     kogelY - vijandY < 51 &&
-    kogelY - vijandY > -51 || 
-    kogelX - vijand2X < 41 &&
+    kogelY - vijandY > -51) {
+    console.log("BotsingKogel");
+    beweegKogel = false;
+    resetVijand1();
+    };
+
+  if ( kogelX - vijand2X < 41 &&
     kogelX - vijand2X > -41 &&
     kogelY - vijand2Y < 51 &&
-    kogelY - vijand2Y > -51) {
-    console.log("Botsing");
-    if (hp > 0) {
-      hp -= 3;
-      deleteTrack();
-    }
-    };
+    kogelY - vijand2Y > -51){
+      beweegKogel = false;
+      resetVijand2();
+    } 
+
   // update punten en health
   if (hp > 0) {
     fill(0, 200, 0);
@@ -326,6 +329,16 @@ function setup() {
 function beweegKogel(){
 kogelX += (mouseX - spelerX)/ 50
 kogelY += (mouseY - spelerY)/ 50
+}
+
+function resetVijand1(){
+vijandX = 0;
+vijandY = 0;
+}
+
+function resetVijand2(){
+vijand2X = 1800;
+vijand2Y = 0;
 }
 
 function resetSpel(){
