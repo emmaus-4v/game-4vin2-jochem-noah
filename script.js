@@ -157,7 +157,7 @@ var beweegAlles = function () {
   };
   
   // kogel
-  if(mouseIsPressed && mousePressedTimes < 2 && gameTimer > 73){
+  if(mouseIsPressed && mousePressedTimes < 2 && gameTimer > 30){
     beweegKogel = true
     mousePressedTimes ++
   }
@@ -287,27 +287,27 @@ var tekenAlles = function () {
   if (gameTimer=> 0){
   gameTimer++;
   textSize(30)
-  text(gameTimer/73, 20, 30);
+  text(gameTimer/60, 20, 30);
   }
-if (gameTimer > 730){
+if (gameTimer > 600){
     vijandSnelheid = 65
   }
-  if (gameTimer > 1460){
+  if (gameTimer > 1200){
     vijandSnelheid = 60
   }
-  if (gameTimer > 2190){
+  if (gameTimer > 1800){
     vijandSnelheid = 55
   }
-  if (gameTimer > 2920){
+  if (gameTimer > 2400){
     vijandSnelheid = 50
   }
-  if (gameTimer > 3650){
+  if (gameTimer > 3000){
     vijandSnelheid = 40
   }
-  if (gameTimer > 4380){
+  if (gameTimer > 3600){
     vijandSnelheid = 30
   }
-  if (gameTimer > 5110){
+  if (gameTimer > 4200){
     vijandSnelheid = 15
   }
 };
@@ -417,7 +417,7 @@ function draw() {
   if (spelStatus === PREGAME){
     image(backgroundImg, 0, 0, 1680, 1005);
 
-    if (mouseIsPressed && mouseX > 420){
+    if (mouseIsPressed && mouseX > 420 && mouseX < 720 && mouseY > 502 && mouseY < 640){
       spelStatus = SPELEN;
       deleteTrack();
       resetSpel();
