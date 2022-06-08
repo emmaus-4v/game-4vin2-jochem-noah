@@ -27,7 +27,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] als speler en vijand botsen hp eraf
 - [x] als hp = 0 -> dood
 - [x] kogel kunnen schieten
-- [ ] als kogel uit beeld, kogel weg maken
+- [x] als kogel uit beeld, kogel weg maken
 - [ ] als kogel tegenstander raakt punt erbij
 - [ ] 
 
@@ -35,14 +35,14 @@ Basis: uitleg, spelen, afgaan en punten
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
-- [ ] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
-- [ ] x. teken een bal, kogel (als die in je spel zit)
-- [ ] x. beweeg de tegenspeler of je bal
+- [x] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
+- [x] x. teken een bal, kogel (als die in je spel zit)
+- [x] x. beweeg de tegenspeler of je bal
 - [ ] x. zet punten op het scherm 
 - [ ] x. zorg dat je punten kunt scoren
-- [ ] x. zorg dat je af kunt
-- [ ] x. maak game-over-scherm
-- [ ] x. maak uitlegscherm
+- [x] x. zorg dat je af kunt
+- [x] x. maak game-over-scherm
+- [x] x. maak uitlegscherm
 
 ### Uitbreidingen 2
 Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
@@ -52,10 +52,10 @@ Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
 
 ### Ideeen voor uitbreidingen
 Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
-- [ ] Gebruik plaatjes voor de vijanden
+- [x] Gebruik plaatjes voor de vijanden
 - [ ] Animeer speler
 - [ ] Laat badges vallen die extra's aan speler geven
-- [ ] Maak spel steeds moeilijker door toenemend aantal vijanden met tekenVijand
+- [x] Maak spel steeds moeilijker door toenemend aantal vijanden met tekenVijand
 - [ ] Maak andere vijanden bij toenemen tekenVijand
 - [ ] Laat vijanden bewegen in patronen
 - [ ] Maak bediening met touch of bewegen van telefoon mogelijk (zorg dat toetsenbordbediening ook blijft werken)
