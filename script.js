@@ -381,6 +381,7 @@ function resetSpel(){
   resetVijand2();
   beweegKogel = false;
   vijandSnelheid = 70;
+  gameTimer = 0;
 }
 
 function deleteTrack() {
