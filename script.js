@@ -157,7 +157,7 @@ var beweegAlles = function () {
   };
   
   // kogel
-  if(mouseIsPressed && mousePressedTimes < 2){
+  if(mouseIsPressed && mousePressedTimes < 2 && gameTimer > 73){
     beweegKogel = true
     mousePressedTimes ++
   }
@@ -417,12 +417,12 @@ function draw() {
   if (spelStatus === PREGAME){
     image(backgroundImg, 0, 0, 1680, 1005);
 
-    if (mouseIsPressed){
+    if (mouseIsPressed && mouseX > 420){
       spelStatus = SPELEN;
       deleteTrack();
       resetSpel();
     }else{
-      image(startKnop, 690, 502, 300, 138);
+      image(startKnop, 420, 502, 300, 138);
     }
   }
 }
