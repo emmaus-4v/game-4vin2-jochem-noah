@@ -201,6 +201,10 @@ var verwerkBotsing = function () {
       deleteTrack();
     }
   };
+
+  //botsing vijand tegen vijand
+  
+  
   // botsing kogel tegen vijand
   if (beweegKogel === true && kogelX - vijandX < 41 &&
     kogelX - vijandX > -41 &&
