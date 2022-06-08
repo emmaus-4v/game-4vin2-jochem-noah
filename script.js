@@ -41,7 +41,7 @@ var vijandStatus = 1;
 var vijand2Status = 1;
 
 //hp en punten
-var hp = 400;
+var hp = 500;
 var stamina = 250;
 var gameTimer = 0;
 var mousePressedTimes = 0;
@@ -236,18 +236,19 @@ var tekenAlles = function () {
   fill("red");
   ellipse(vijandX, vijandY, 10, 10);*/
   if(vijandStatus < 2){
-    image(vijandNormaalImg, vijandX-35, vijandY-45, 70, 90);
+    image(vijandNormaalImg, vijandX-60, vijandY-77.5, 120, 155);
   }
   if (vijandStatus > 1){
-    image(vijandNormaalImgRev, vijandX-35, vijandY-45, 70, 90);
+    image(vijandNormaalImgRev, vijandX-60, vijandY-77.5, 120, 155);
   }
 
   if(vijand2Status < 2){
-    image(vijandNormaalImg, vijand2X-35, vijand2Y-45, 70, 90);
+    image(vijandNormaalImg, vijand2X-60, vijand2Y-77.5, 120, 155);
   }
   if (vijand2Status > 1){
-    image(vijandNormaalImgRev, vijand2X-35, vijand2Y-45, 70, 90);
+    image(vijandNormaalImgRev, vijand2X-60, vijand2Y-77.5, 120, 155);
   }
+  
   // kogel
   if (beweegKogel === true){
     fill(230, 153, 0)
@@ -337,8 +338,8 @@ var checkGameOver = function () {
  function preload() {
   spelerImg = loadImage('Afbeeldingen/pixel-doom-guy.png');
   spelerImgRev = loadImage('Afbeeldingen/pixel-doom-guy-reversed.png');
-  vijandNormaalImg = loadImage('Afbeeldingen/imp_pixel.png');
-  vijandNormaalImgRev = loadImage('Afbeeldingen/imp_pixel_rev.png');
+  vijandNormaalImg = loadImage('Afbeeldingen/shooting-demonRev.png');
+  vijandNormaalImgRev = loadImage('Afbeeldingen/shooting-demon.png');
   backgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
   gameOverImg = loadImage('Afbeeldingen/you-died.png');
   startKnop = loadImage('Afbeeldingen/Start-Button.png');
@@ -375,7 +376,7 @@ vijand2Y = Math.floor(Math.random() * 1005) + 1;
 function resetSpel(){
   spelerX = 600;
   spelerY = 600;
-  hp = 400;
+  hp = 500;
   resetVijand1();
   resetVijand2();
   beweegKogel = false;
