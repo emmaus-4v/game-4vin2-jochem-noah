@@ -366,11 +366,23 @@ kogelY += (mouseY - spelerY)/ 50
 function resetVijand1(){
   vijandX = Math.floor(Math.random() * 1680) + 1;
   vijandY = Math.floor(Math.random() * 1005) + 1;
+  if(vijandX < 840){
+    vijandX -= 840
+  }
+  if(vijandX > 840){
+    vijandX += 840
+  }
 }
 
 function resetVijand2(){
-vijand2X = Math.floor(Math.random() * 1680) + 1;
-vijand2Y = Math.floor(Math.random() * 1005) + 1;
+  vijand2X = Math.floor(Math.random() * 1680) + 1;
+  vijand2Y = Math.floor(Math.random() * 1005) + 1;
+  if(vijand2X < 840){
+    vijand2X -= 840
+  }
+  if(vijand2X > 840){
+    vijand2X += 840
+  }
 }
 
 function resetSpel(){
