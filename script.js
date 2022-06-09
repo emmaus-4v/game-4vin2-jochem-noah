@@ -203,7 +203,15 @@ var verwerkBotsing = function () {
   };
 
   //botsing vijand tegen vijand
-  
+  if (vijand2X - vijandX < 70 &&
+    vijand2X - vijandX > -70 &&
+    vijand2Y - vijandY < 90 &&
+    vijand2Y - vijandY > -90 ){
+      vijand2X --
+      vijandX ++
+      vijand2Y --
+      vijandY ++
+    }
   
   // botsing kogel tegen vijand
   if (beweegKogel === true && kogelX - vijandX < 41 &&
