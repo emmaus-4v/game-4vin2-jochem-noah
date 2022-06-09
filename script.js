@@ -240,17 +240,17 @@ var tekenAlles = function () {
   fill("red");
   ellipse(vijandX, vijandY, 10, 10);*/
   if(vijandStatus < 2){
-    image(vijandNormaalImg, vijandX-60, vijandY-77.5, 120, 155);
+    image(vijandNormaalImg, vijandX-70, vijandY-77.5, 140, 155);
   }
   if (vijandStatus > 1){
-    image(vijandNormaalImgRev, vijandX-60, vijandY-77.5, 120, 155);
+    image(vijandNormaalImgRev, vijandX-70, vijandY-77.5, 140, 155);
   }
 
   if(vijand2Status < 2){
-    image(vijandNormaalImg, vijand2X-60, vijand2Y-77.5, 120, 155);
+    image(vijandNormaalImg, vijand2X-70, vijand2Y-77.5, 140, 155);
   }
   if (vijand2Status > 1){
-    image(vijandNormaalImgRev, vijand2X-60, vijand2Y-77.5, 120, 155);
+    image(vijandNormaalImgRev, vijand2X-70, vijand2Y-77.5, 140, 155);
   }
   
   // kogel
@@ -313,7 +313,7 @@ if (gameTimer > 600){
     vijandSnelheid = 30
   }
   if (gameTimer > 4200){
-    vijandSnelheid = 15
+    vijandSnelheid = 20
   }
 };
 
