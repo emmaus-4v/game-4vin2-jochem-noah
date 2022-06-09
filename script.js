@@ -18,8 +18,8 @@ var gameOverImg;
 var startKnop;
 
 //speler
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerX = 840; // x-positie van speler
+var spelerY = 502; // y-positie van speler
 var spelerSnelheid = 6;
 
 var spelerImg;
@@ -390,8 +390,8 @@ function resetVijand2(){
 }
 
 function resetSpel(){
-  spelerX = 600;
-  spelerY = 600;
+  spelerX = 840;
+  spelerY = 502;
   hp = 500;
   resetVijand1();
   resetVijand2();
