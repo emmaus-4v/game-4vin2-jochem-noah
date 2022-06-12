@@ -13,9 +13,11 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 const PREGAME = 3;
+const UITLEG = 4;
 var spelStatus = PREGAME;
 var gameOverImg;
 var startKnop;
+var uitlegKnop;
 
 //speler
 var spelerX = 840; // x-positie van speler
@@ -355,6 +357,7 @@ var checkGameOver = function () {
   backgroundImg = loadImage('Afbeeldingen/Dungeon_Floor.jpg');
   gameOverImg = loadImage('Afbeeldingen/you-died.png');
   startKnop = loadImage('Afbeeldingen/Start-Button.png');
+  uitlegKnop = loadImage('Afbeeldingen/Uitleg-Button.png');
 }
 
 function setup() {
@@ -442,13 +445,29 @@ function draw() {
   
   if (spelStatus === PREGAME){
     image(backgroundImg, 0, 0, 1680, 1005);
+    image(startKnop, 520, 502, 300, 138);
+    image(uitlegKnop, 860, 502, 300, 138);
 
-    if (mouseIsPressed && mouseX > 420 && mouseX < 720 && mouseY > 502 && mouseY < 640){
+    if (mouseIsPressed && mouseX > 520 && mouseX < 820 && mouseY > 502 && mouseY < 640){
       spelStatus = SPELEN;
       deleteTrack();
       resetSpel();
-    }else{
-      image(startKnop, 420, 502, 300, 138);
+    }
+
+    if (mouseIsPressed && mouseX > 860 && mouseX < 1160 && mouseY > 502 && mouseY < 640){
+      spelStatus = UITLEG;
+      deleteTrack();
+      resetSpel();
+    }
+  }
+  if (spelStatus === UITLEG){
+    image(backgroundImg, 0, 0, 1680, 1005);
+    image(startKnop, 690, 702, 300, 138);
+
+    if (mouseIsPressed && mouseX > 690 && mouseX < 990 && mouseY > 702 && mouseY < 840){
+      spelStatus = SPELEN;
+      deleteTrack();
+      resetSpel();
     }
   }
 }
