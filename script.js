@@ -464,6 +464,15 @@ function draw() {
     image(backgroundImg, 0, 0, 1680, 1005);
     image(startKnop, 690, 702, 300, 138);
 
+    fill(110, 0, 0);
+    textSize(45)
+    text("Gebruik W, A, S en D om te bewegen", 440, 302)
+    text("Met shift kan je sprinten zolang je stamina hebt", 360, 352)
+    text("Met de linkermuisknop kun je schieten", 440, 402)
+    text("Je kan maar een keer per keer schieten dus pas op", 330, 452)
+    text("De vijanden worden steeds sneller naarmate de tijd vordert", 260, 502)
+    text("De tijd die je overleeft is je score", 490, 552)
+
     if (mouseIsPressed && mouseX > 690 && mouseX < 990 && mouseY > 702 && mouseY < 840){
       spelStatus = SPELEN;
       deleteTrack();
