@@ -447,6 +447,9 @@ function draw() {
     image(backgroundImg, 0, 0, 1680, 1005);
     image(startKnop, 520, 502, 300, 138);
     image(uitlegKnop, 860, 502, 300, 138);
+    fill(110, 0, 0);
+    textSize(100)
+    text("Dungeon of Doom", 420, 100)
 
     if (mouseIsPressed && mouseX > 520 && mouseX < 820 && mouseY > 502 && mouseY < 640){
       spelStatus = SPELEN;
@@ -463,6 +466,9 @@ function draw() {
   if (spelStatus === UITLEG){
     image(backgroundImg, 0, 0, 1680, 1005);
     image(startKnop, 690, 702, 300, 138);
+    fill(110, 0, 0);
+    textSize(100)
+    text("Dungeon of Doom", 420, 100)
 
     fill(110, 0, 0);
     textSize(45)
